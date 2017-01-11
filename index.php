@@ -45,23 +45,23 @@
     <span>Please Input Your Gene IDs(at least 2 IDs) OR gene symbols OR gene iterm pairs Below</span></br></br>
     <span><b>Samples:</b></span></br>
     <span>Entrez </span><button><a href="sampleData/entrezID-sample.txt" target="_blank" style="text-decoration:none;">Sample</a></button>
-    <span>&nbspUniprot </span><button><a href="sampleData/uniprotID-sample.txt" target="_blank" style="text-decoration:none;">Sample</a></button>
-    <span>&nbspEnsembl </span><button><a href="sampleData/ensemblID-sample.txt" target="_blank" style="text-decoration:none;">Sample</a></button>
-    <span>&nbspGene symbol </span><button><a href="sampleData/symbol-sample.txt" target="_blank" style="text-decoration:none;">Sample</a></button>
-    <span>&nbsp Gene-Iterm </span><button type="button"><a href="sampleData/gene-iterm-sample.txt" target="_blank" style="text-decoration:none;">Sample</a></button>
+    <span>&nbsp; Uniprot </span><button><a href="sampleData/uniprotID-sample.txt" target="_blank" style="text-decoration:none;">Sample</a></button>
+    <span>&nbsp; Ensembl </span><button><a href="sampleData/ensemblID-sample.txt" target="_blank" style="text-decoration:none;">Sample</a></button>
+    <span>&nbsp; Gene symbol </span><button><a href="sampleData/symbol-sample.txt" target="_blank" style="text-decoration:none;">Sample</a></button>
+    <span>&nbsp; Gene-Iterm </span><button type="button"><a href="sampleData/gene-iterm-sample.txt" target="_blank" style="text-decoration:none;">Sample</a></button>
     </br>
     <span><b>Input type:</b></span></br>
-    <span><input type="radio" name="type" value="entrez"></span><span>Entrez ID &nbsp&nbsp</span>
-    <span><input type="radio" name="type" value="uniprot"></span><span>UniProt ID &nbsp&nbsp</span>
-    <span><input type="radio" name="type" value="ensembl"></span><span>Ensembl ID &nbsp&nbsp</span>
-    <span><input type="radio" name="type" value="genesymbol"></span><span>Gene symbols &nbsp&nbsp</span>
+    <span><input type="radio" name="type" value="entrez"></span><span>Entrez ID &nbsp; &nbsp;</span>
+    <span><input type="radio" name="type" value="uniprot"></span><span>UniProt ID &nbsp; &nbsp;</span>
+    <span><input type="radio" name="type" value="ensembl"></span><span>Ensembl ID &nbsp; &nbsp;</span>
+    <span><input type="radio" name="type" value="genesymbol"></span><span>Gene symbols &nbsp; &nbsp;</span>
     <span><input type="radio" name="type" value="gene-iterm"></span><span>Symbol Iterm Pair</span></br></br>
     
     <span><b>Custom Data</b></span></br>
     <span>Users can visualize their two-column tab delimited data (e.g.gene pathway pair data) </span></br>
     <span>Sample: <button><a href="sampleData/custome-sample.txt" target="_blank" style="text-decoration:none;">Sample</a></button>
     </span></br></br>
-    <span><input type="radio" name="type" value="custome"></span><span>Customized Data &nbsp&nbsp</span></br></br>
+    <span><input type="radio" name="type" value="custome"></span><span>Customized Data &nbsp; &nbsp;</span></br></br>
     <textarea rows=20 cols=80 name="txt_query"></textarea>
 
     <?php
@@ -85,7 +85,7 @@
 
 </div>
 <div id='sidePage'>
-  <a href='images/Liang_PAG_Poster.pdf' target='_blank'><img src='images/flowChart.png' height='250px'/></a></br>
+  <a href='images/Liang_PAG_Poster.pdf' target='_blank'><img src='images/Figure1_Flowchart.png' height='300px'/></a></br>
   <iframe width="350" height="300" src="https://www.youtube.com/embed/RP4MWQpVHwU" frameborder="1" allowfullscreen></iframe>  
 </div>
 </div>

@@ -1,5 +1,5 @@
 
-function loadTable(fileName, flag_egift, conceptName, fisherFile){   
+function loadTable(fileName, flag_egift, conceptName, fisherFile, inputType){   
 
     // LOADING contents
     var fileName_url = '/webgivi/edittable_output.php?filename='+fileName+'.txt';    
@@ -667,7 +667,9 @@ function loadTable(fileName, flag_egift, conceptName, fisherFile){
 
         function format_name(d) {
             var name = '<b>';
-            name += 'p='+d.pvalue+'<br/>';
+            if ((inputType!="gene-iterm") && (inputType!='custome')){
+                name += 'p='+d.pvalue+'<br/>';
+            }
             name += d.genes.join("</b><br/><b>");
             name += '</b><br/>';
             return name;
@@ -742,6 +744,7 @@ function loadTable(fileName, flag_egift, conceptName, fisherFile){
         cellDiv.attr("class", "Bcell")
                 .append("span")
                 .text(function (d) {
+                    if ((inputType=="gene-iterm") || (inputType=='custome')){  return d.keys +'';   }
                     if (d.cat==""){ return d.keys +' (no category)'; }
                     else{ return d.keys +' ('+ d.cat+')'; }
                 });

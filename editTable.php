@@ -5,7 +5,7 @@ display_header();
 //$fileName = $_GET['fileName'];
 ?>
 
-<script src="js/editTable.js?version=28"></script>
+<script src="js/editTable.js?version=29"></script>
 
 <?php
       $type=$_SESSION["type"];
@@ -207,7 +207,8 @@ display_header();
 	  var fileName = <?php echo "'".$outfile_post."'"; ?>;
           var conceptName = <?php echo "'".$conceptName."'"; ?>;
           var fisherFile = <?php echo "'".$fisher_file."'"; ?>;
-    loadTable(fileName,true,conceptName,fisherFile);
+          var inputType = <?php echo "'".$type."'"; ?>;
+    loadTable(fileName,true,conceptName,fisherFile,inputType);
           
 	</script>
 
@@ -229,7 +230,8 @@ display_header();
 	  var fileName = <?php echo "'".$outfile_post."'"; ?>;
           var conceptName = <?php echo "'".$conceptName."'"; ?>;
 	  var fisherFile = <?php echo "'".$fisher_file."'"; ?>;
-    loadTable(fileName,true,conceptName,fisherFile);
+    var inputType = <?php echo "'".$type."'"; ?>;
+    loadTable(fileName,true,conceptName,fisherFile,inputType);
           
 	</script>
 <?php            
