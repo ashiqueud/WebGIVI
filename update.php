@@ -9,6 +9,7 @@
    }
    if(preg_match("/\t/", $_POST['txt']) == TRUE){
       $txt = test_input($_POST['txt']);
+      
    }else{
       echo "<script type='text/javascript'> alert('your input data format have problem, please contact us!'); </script>";
       exit();

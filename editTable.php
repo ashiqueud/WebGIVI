@@ -5,7 +5,7 @@ display_header();
 //$fileName = $_GET['fileName'];
 ?>
 
-<script src="js/editTable.js?version=29"></script>
+<script src="js/editTable.js?version=52"></script>
 
 <?php
       $type=$_SESSION["type"];
@@ -84,18 +84,26 @@ display_header();
         echo "<div>Suggestion: if your filtered data is larger than 1000 lines, please use concept map to visuallize!</div></br>";
         echo '<div id="wait"><!-- loading animation --></div>';
         echo "<div>";
-        echo "Sort: <select id='sortTable'><option value='alph'>alphabetical</option><option value='freq'>frequency</option>";
+        echo "<b>Sort:</b> <select id='sortTable'><option value='alph' selected>alphabetical</option><option value='freq'>frequency</option>";
         if($type == 'entrez' ||$type == 'uniprot'|| $type=='ensembl' || $type=='genesymbol'){
           echo "<option value='cat'>categories</option>";
           echo "<option value='pval' selected>p-values</option>";
         }
         echo "</select> &nbsp;&nbsp;&nbsp;&nbsp;";
-        echo "Frequency: <= <input id='input_freq' type='text' size=3 value='0' > <button id='select_freq'>Select</button>&nbsp;&nbsp;&nbsp;&nbsp;";
-        echo "Selection: <button id='clear'>Clear</button>&nbsp; <button id='selectall'>Select all</button>&nbsp; <button id='toggle'>Toggle</button>&nbsp;&nbsp;";       
+
+        echo "<b>Select:</b> <select id='selectTable'><option value='frequency' selected>frequency <=</option>";
+        if($type == 'entrez' ||$type == 'uniprot'|| $type=='ensembl' || $type=='genesymbol'){          
+          echo "<option value='pvalue'>p-value >=</option>";
+        }
+        echo "</select> &nbsp;";
+        echo "<input id='input_freq' type='text' size=5 value='0' >&nbsp;";
+        echo "<button id='select_freq'>Select</button>&nbsp;&nbsp;&nbsp;&nbsp;";
+
+        echo "<b>Selection:</b> <button id='clear'>Clear</button>&nbsp; <button id='selectall'>Select all</button>&nbsp; <button id='toggle'>Toggle</button>&nbsp;&nbsp;";       
         echo "</br></br>";
         echo "<!-- <button id='delete'>Delete</button> &nbsp; -->";        
         echo "Remove options: <select id='showTable'> <option value='none' selected>&lt;select one&gt;</option> <option value='remove'>Remove selected</option> <!-- <option value='blacklist'>Remove selected and blacklist</option> --> </select> &nbsp;";        
-        echo "Include blacklisted items:<input type='checkbox' id='blacklistfilter' value='black' checked> &nbsp;";
+        echo "Include blacklisted iTerms:<input type='checkbox' id='blacklistfilter' value='black'> &nbsp;";
         echo "<button id='reset'>Reset table</button> &nbsp;";
         echo "<button id='view'>View</button> &nbsp;";
         echo "<button id='download'>Download</button> &nbsp;";
@@ -182,7 +190,8 @@ display_header();
 	  var fileName = <?php echo "'".$outfile_post."'"; ?>;
           var conceptName = <?php echo "'".$conceptName."'"; ?>;
           var fisherFile = <?php echo "'".$fisher_file."'"; ?>;
-	  loadTable(fileName,true,conceptName,fisherFile);
+          var databaseType = <?php echo "'".$typeDB."'"; ?>;
+	  loadTable(fileName,true,conceptName,fisherFile,databaseType);
           
 	</script>
 <?php
@@ -208,7 +217,8 @@ display_header();
           var conceptName = <?php echo "'".$conceptName."'"; ?>;
           var fisherFile = <?php echo "'".$fisher_file."'"; ?>;
           var inputType = <?php echo "'".$type."'"; ?>;
-    loadTable(fileName,true,conceptName,fisherFile,inputType);
+          var databaseType = <?php echo "'".$typeDB."'"; ?>;
+    loadTable(fileName,true,conceptName,fisherFile,databaseType, inputType);
           
 	</script>
 
@@ -231,7 +241,8 @@ display_header();
           var conceptName = <?php echo "'".$conceptName."'"; ?>;
 	  var fisherFile = <?php echo "'".$fisher_file."'"; ?>;
     var inputType = <?php echo "'".$type."'"; ?>;
-    loadTable(fileName,true,conceptName,fisherFile,inputType);
+    var databaseType = <?php echo "'".$typeDB."'"; ?>;
+    loadTable(fileName,true,conceptName,fisherFile,databaseType, inputType);
           
 	</script>
 <?php            

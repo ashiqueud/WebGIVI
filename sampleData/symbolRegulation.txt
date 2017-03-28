@@ -1,1 +1,1 @@
-symbol	regulationHK1	UpSDK1	DownTFAM	UpADD3	DownMUSK	Up
+symbol	regulationHSP90AA1	UpHSPB8	UpNHLH1	UpNPFFR1	Up
